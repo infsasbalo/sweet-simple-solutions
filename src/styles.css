@@ -158,3 +158,19 @@
   font-weight: 500;
   letter-spacing: -0.065em;
 }
+
+
+/* Display type for the second phrase of the hero headline. */
+@font-face {
+  font-family: "Agraham";
+  src: url("/fonts/Agraham.woff2") format("woff2"), url("/fonts/Agraham.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+.hero-title-agraham {
+  font-family: "Agraham", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
