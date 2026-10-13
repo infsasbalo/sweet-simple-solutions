@@ -241,9 +241,52 @@ h2, h3 {
   50% { box-shadow: 0 0 16px rgba(255,255,255,0.18); }
 }
 
-/* Simple fade-in for the hero headline. */
+/* Hero headline glow and restrained motion graphics. */
 #inicio h1 {
-  animation: hero-title-fade-in 900ms ease-out both;
+  animation: hero-title-fade-in 900ms ease-out both, hero-title-glow 4s ease-in-out 900ms infinite;
+  text-shadow: 0 0 24px rgba(255, 255, 255, 0.08);
+}
+
+#inicio h1 .hero-title-rounded,
+#inicio h1 .hero-title-fraunces {
+  position: relative;
+  isolation: isolate;
+}
+
+#inicio h1 .hero-title-rounded::after,
+#inicio h1 .hero-title-fraunces::after {
+  content: "";
+  position: absolute;
+  inset: -0.08em -0.04em;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.72) 50%, transparent 65%);
+  background-size: 220% 100%;
+  background-position: 120% 0;
+  -webkit-mask-image: linear-gradient(#000, #000);
+  mask-image: linear-gradient(#000, #000);
+  animation: hero-letter-shine 5s ease-in-out 1.2s infinite;
+  mix-blend-mode: screen;
+}
+
+#inicio h1 .hero-title-fraunces::after {
+  animation-delay: 2s;
+  background-image: linear-gradient(110deg, transparent 35%, rgba(255,225,228,0.78) 50%, transparent 65%);
+}
+
+#inicio .hero-motion-orb {
+  animation: hero-orb-float 7s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+#inicio .hero-motion-orb-delayed {
+  animation: hero-orb-float 9s ease-in-out -3s infinite reverse;
+  will-change: transform, opacity;
+}
+
+#inicio .hero-motion-line {
+  transform-origin: center;
+  animation: hero-line-pulse 5s ease-in-out infinite;
 }
 
 @keyframes hero-title-fade-in {
@@ -251,6 +294,52 @@ h2, h3 {
   to { opacity: 1; }
 }
 
+@keyframes hero-title-glow {
+  0%, 100% { text-shadow: 0 0 12px rgba(255,255,255,0.04); }
+  50% { text-shadow: 0 0 28px rgba(255,255,255,0.16), 0 0 48px rgba(255,38,59,0.12); }
+}
+
+@keyframes hero-letter-shine {
+  0%, 65%, 100% { background-position: 120% 0; }
+  80% { background-position: -20% 0; }
+}
+
+@keyframes hero-orb-float {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.65; }
+  50% { transform: translate3d(12px, -16px, 0) scale(1.06); opacity: 1; }
+}
+
+@keyframes hero-line-pulse {
+  0%, 100% { opacity: 0.45; transform: scaleX(0.75); }
+  50% { opacity: 1; transform: scaleX(1); }
+}
+
+/* Larger, rounder primary call-to-action. */
+.premium-cta {
+  border-radius: 999px;
+  padding: 1rem 2rem;
+  font-size: clamp(0.875rem, 1.15vw, 1.05rem);
+  letter-spacing: 0.045em;
+  box-shadow: 0 8px 28px rgba(255, 38, 59, 0.18);
+}
+
+.premium-cta-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  flex-basis: 2.2rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  #inicio h1 { animation: none; }
+  #inicio h1,
+  #inicio h1 .hero-title-rounded::after,
+  #inicio h1 .hero-title-fraunces::after,
+  #inicio .hero-motion-orb,
+  #inicio .hero-motion-orb-delayed,
+  #inicio .hero-motion-line,
+  .premium-cta, .premium-cta::before, .premium-cta-icon {
+    animation: none;
+    transition: none;
+    filter: none;
+    transform: none;
+  }
 }
