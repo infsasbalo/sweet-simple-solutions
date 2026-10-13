@@ -1,73 +1,40 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  ArrowDown,
-  ArrowRight,
-  BookOpen,
-  Check,
-  CircleHelp,
-  Heart,
-  LockKeyhole,
-  MessageCircle,
-  ShieldCheck,
-  Sparkles,
-  Target,
-} from "lucide-react";
+import { ArrowRight, BookOpen, Check, MessageCircle } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const benefits = [
+const topics = [
   {
-    icon: Target,
-    title: "Identificar com clareza",
-    description: "Reconhece comportamentos difíceis e padrões relacionais que merecem atenção.",
+    number: "01",
+    title: "Perceber os padrões",
+    text: "Aprende a observar atitudes e dinâmicas de comunicação que podem tornar uma relação difícil.",
   },
   {
-    icon: Sparkles,
-    title: "Compreender o que se passa",
-    description: "Reflete sobre dinâmicas de comunicação e o impacto que podem ter em ti.",
+    number: "02",
+    title: "Definir os teus limites",
+    text: "Pensa no que é importante para ti e em como comunicar os teus limites com mais clareza.",
   },
   {
-    icon: ShieldCheck,
-    title: "Estabelecer limites",
-    description: "Explora formas mais claras de comunicar as tuas necessidades e limites.",
+    number: "03",
+    title: "Cuidar de ti",
+    text: "Dá atenção às tuas necessidades, às tuas escolhas e à forma como te sentes nas tuas relações.",
   },
-  {
-    icon: Heart,
-    title: "Fortalecer a tua confiança",
-    description: "Dá mais espaço às tuas emoções, escolhas e ao teu bem-estar.",
-  },
-  {
-    icon: BookOpen,
-    title: "Construir relações mais saudáveis",
-    description: "Aprende a pensar nas tuas opções e a escolher os próximos passos com consciência.",
-  },
-];
-
-const audience = [
-  "Queres compreender melhor comportamentos que te deixam confuso/a.",
-  "Tens dificuldade em estabelecer limites sem sentir culpa.",
-  "Procuras formas mais conscientes de lidar com conversas difíceis.",
-  "Queres dar mais atenção à tua tranquilidade e ao teu bem-estar.",
 ];
 
 const faqs = [
   {
-    question: "Como recebo o e-book?",
-    answer: "Envia uma mensagem pelo WhatsApp para receber informações sobre o formato, o processo de compra e a entrega do guia.",
+    question: "Como posso comprar o e-book?",
+    answer: "Envia-nos uma mensagem pelo WhatsApp. Explicamos o preço, os métodos de pagamento e como receberás o ficheiro.",
   },
   {
-    question: "Qual é o preço?",
-    answer: "O preço e as opções de pagamento serão confirmados pelo WhatsApp antes de decidires comprar.",
+    question: "Em que formato vou receber o e-book?",
+    answer: "O formato e os detalhes de entrega serão confirmados contigo antes da compra.",
   },
   {
-    question: "Como posso pagar?",
-    answer: "Contacta-nos pelo WhatsApp para confirmar os métodos de pagamento disponíveis.",
-  },
-  {
-    question: "O e-book substitui apoio psicológico?",
-    answer: "Não. É um recurso educativo e não substitui avaliação, diagnóstico ou acompanhamento de um profissional de saúde mental.",
+    question: "O guia serve para diagnosticar alguém?",
+    answer: "Não. O e-book é um recurso educativo para ajudar a refletir sobre comportamentos e limites. Não substitui a avaliação de um profissional.",
   },
 ];
 
@@ -76,228 +43,156 @@ function Index() {
   const whatsappUrl =
     "https://wa.me/244XXXXXXXXX?text=" +
     encodeURIComponent(
-      "Olá! Tenho interesse no e-book Como Lidar com Pessoas Narcisistas. Pode enviar-me o preço, as opções de pagamento e como recebo o guia?",
+      "Olá. Gostaria de receber informações sobre o e-book Como Lidar com Pessoas Narcisistas, incluindo o preço e as formas de pagamento.",
     );
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#050505] text-[#f6f2ef]">
-      <header className="relative z-20 border-b border-white/10 bg-black/80">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8">
-          <a href="#inicio" className="flex items-center gap-3" aria-label="Sweet Simple Solutions — início">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#ff1e2d] text-[#ff1e2d]">
-              <Sparkles size={21} />
-            </span>
-            <span className="leading-tight">
-              <span className="block text-sm font-semibold uppercase tracking-[0.18em]">Sweet Simple</span>
-              <span className="block text-[10px] uppercase tracking-[0.32em] text-white/60">Solutions</span>
-            </span>
+    <main className="min-h-screen bg-[#090909] text-[#f2efec]">
+      <header className="border-b border-white/10">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
+          <a href="#inicio" className="leading-tight" aria-label="Sweet Simple Solutions — início">
+            <span className="block text-sm font-semibold tracking-[0.16em]">SWEET SIMPLE</span>
+            <span className="mt-1 block text-[10px] tracking-[0.32em] text-white/50">SOLUTIONS</span>
           </a>
-          <nav className="hidden items-center gap-8 text-sm text-white/75 md:flex">
-            <a href="#inicio" className="transition hover:text-[#ff2635]">Início</a>
-            <a href="#beneficios" className="transition hover:text-[#ff2635]">Benefícios</a>
-            <a href="#sobre" className="transition hover:text-[#ff2635]">Sobre o e-book</a>
-            <a href="#perguntas" className="transition hover:text-[#ff2635]">Perguntas</a>
-          </nav>
           <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-[#f3162a] px-4 py-2.5 text-xs font-bold text-white shadow-lg shadow-red-950/40 transition hover:bg-[#d90d20] sm:px-5 sm:text-sm"
+            href="#ebook"
+            className="border-b border-[#e51b2b] pb-1 text-sm text-white/80 transition hover:text-white"
           >
-            <MessageCircle size={17} /> <span className="hidden sm:inline">Falar no WhatsApp</span><span className="sm:hidden">WhatsApp</span>
+            Sobre o e-book
           </a>
         </div>
       </header>
 
-      <section id="inicio" className="relative isolate border-b border-white/10">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_78%_35%,rgba(235,10,32,0.22),transparent_38%),radial-gradient(ellipse_at_12%_80%,rgba(110,0,10,0.24),transparent_40%),linear-gradient(115deg,#050505_30%,#100304_68%,#050505)]" />
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 md:min-h-[650px] md:grid-cols-[1.05fr_0.95fr] md:gap-8 md:py-20">
-          <div className="relative z-10">
-            <span className="mb-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.28em] text-[#ff2635]">
-              <span className="h-px w-8 bg-[#ff2635]" /> E-book digital
-            </span>
-            <h1 className="max-w-2xl font-serif text-5xl font-semibold leading-[0.99] tracking-tight sm:text-6xl lg:text-7xl">
-              Como Lidar com
-              <span className="mt-2 block text-[#ff2635]">Pessoas Narcisistas</span>
+      <section id="inicio" className="border-b border-white/10">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 md:grid-cols-[1.1fr_0.9fr] md:gap-20 md:py-24">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.24em] text-[#f12a38]">Um guia digital</p>
+            <h1 className="mt-6 max-w-2xl font-serif text-5xl font-medium leading-[1.04] tracking-[-0.035em] sm:text-6xl lg:text-[68px]">
+              Como lidar com pessoas <span className="text-[#f12a38]">narcisistas</span>
             </h1>
-            <p className="mt-7 max-w-xl font-serif text-xl leading-8 text-white/90 sm:text-2xl">
-              Protege a tua paz, recupera a tua confiança e aprende a estabelecer limites saudáveis.
+            <p className="mt-7 max-w-xl text-lg leading-8 text-white/70">
+              Há relações que nos deixam a duvidar do que sentimos e pensamos. Este guia ajuda-te a olhar para esses padrões e a refletir sobre a forma como queres seguir em frente.
             </p>
-            <p className="mt-5 max-w-xl text-base leading-7 text-white/60">
-              Um guia prático para refletir sobre relações difíceis, reconhecer padrões prejudiciais e escolher respostas mais conscientes — seja na família, no trabalho ou nas amizades.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#f3162a] px-7 py-4 font-bold text-white shadow-xl shadow-red-950/40 transition hover:-translate-y-0.5 hover:bg-[#d90d20]"
+                className="inline-flex items-center gap-3 bg-[#e51b2b] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[#c91523]"
               >
-                <MessageCircle size={20} /> Quero saber como comprar <ArrowRight size={18} />
+                <MessageCircle size={18} /> Pedir informações <ArrowRight size={17} />
               </a>
-              <a
-                href="#beneficios"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-4 font-semibold text-white/85 transition hover:border-[#ff2635] hover:text-white"
-              >
-                Explorar o guia <ArrowDown size={16} />
-              </a>
-            </div>
-            <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-xs uppercase tracking-wide text-white/55">
-              <span className="inline-flex items-center gap-2"><ShieldCheck size={15} className="text-[#ff2635]" /> Conteúdo educativo</span>
-              <span className="inline-flex items-center gap-2"><LockKeyhole size={15} className="text-[#ff2635]" /> Informação pelo WhatsApp</span>
+              <span className="text-sm text-white/45">Preço e detalhes pelo WhatsApp</span>
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[500px] py-6">
-            <div className="pointer-events-none absolute inset-x-4 bottom-0 h-24 rounded-full bg-red-700/20 blur-3xl" />
-            <div className="absolute right-2 top-10 h-64 w-64 rounded-full bg-red-600/10 blur-3xl sm:right-0" />
-            <div className="relative mx-auto w-[min(78%,330px)] rotate-[-3deg]">
-              <div className="absolute -left-3 top-2 h-[calc(100%-8px)] w-5 rounded-l-sm border border-white/10 bg-[#292929] shadow-[-12px_12px_22px_rgba(0,0,0,0.55)]" />
-              <div className="relative flex min-h-[420px] flex-col justify-between overflow-hidden border border-white/20 bg-[linear-gradient(145deg,#191919,#050505_58%,#200308)] px-7 py-8 shadow-2xl shadow-black/80 sm:min-h-[470px] sm:px-9 sm:py-10">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_68%,rgba(255,0,32,0.34),transparent_38%),linear-gradient(110deg,transparent_30%,rgba(255,255,255,0.04)_48%,transparent_60%)]" />
-                <div className="relative">
-                  <p className="text-center text-[9px] uppercase tracking-[0.34em] text-white/55">Sweet Simple Solutions</p>
-                  <div className="mx-auto mt-8 h-px w-12 bg-[#ff2635]" />
-                  <h2 className="mt-7 text-center font-serif text-3xl font-semibold uppercase leading-[1.1] sm:text-4xl">
-                    Como lidar com
-                    <span className="mt-2 block text-[#ff2635]">pessoas narcisistas</span>
-                  </h2>
-                  <p className="mt-5 text-center text-[10px] uppercase leading-5 tracking-[0.22em] text-white/65">
-                    Guia prático para proteger a tua paz e o teu bem-estar
-                  </p>
-                </div>
-                <div className="relative mx-auto my-5 flex h-32 w-32 items-center justify-center rounded-full border border-[#ff2635]/40 bg-[radial-gradient(circle,rgba(255,20,40,0.22),rgba(0,0,0,0.1)_68%)] sm:h-40 sm:w-40">
-                  <div className="absolute h-24 w-24 rounded-full border border-white/10 sm:h-32 sm:w-32" />
-                  <Heart size={48} strokeWidth={1} className="text-[#ff2635]" />
-                </div>
-                <div className="relative border-t border-white/15 pt-5 text-center text-[9px] uppercase tracking-[0.22em] text-white/50">
-                  Informação · Consciência · Limites
-                </div>
+          <div className="mx-auto w-full max-w-sm">
+            <div className="relative border border-white/15 bg-[#111111] px-8 py-9 shadow-2xl shadow-black sm:px-10 sm:py-12">
+              <div className="absolute left-0 top-0 h-1 w-20 bg-[#e51b2b]" />
+              <p className="text-center text-[9px] tracking-[0.28em] text-white/45">SWEET SIMPLE SOLUTIONS</p>
+              <div className="my-8 border-t border-white/10" />
+              <p className="text-xs uppercase tracking-[0.2em] text-[#f12a38]">Um guia para relações difíceis</p>
+              <h2 className="mt-5 font-serif text-4xl leading-[1.12]">
+                Como lidar com <span className="text-[#f12a38]">pessoas narcisistas</span>
+              </h2>
+              <p className="mt-5 text-sm leading-6 text-white/55">
+                Compreender os comportamentos. Reconhecer os teus limites. Cuidar de ti.
+              </p>
+              <div className="mt-12 flex items-center justify-between border-t border-white/10 pt-5">
+                <BookOpen size={22} className="text-[#f12a38]" strokeWidth={1.4} />
+                <span className="text-[9px] uppercase tracking-[0.2em] text-white/35">E-book digital</span>
               </div>
-              <div className="absolute -bottom-2 -right-2 h-full w-full -z-10 border border-[#ff2635]/30" />
             </div>
-            <p className="relative mt-8 text-center font-serif text-lg italic text-white/65">
-              “O teu bem-estar também importa.”
-            </p>
+            <p className="mt-4 text-center text-xs text-white/35">Sweet Simple Solutions · Guia digital</p>
           </div>
         </div>
       </section>
 
-      <section id="beneficios" className="border-b border-white/10 bg-[#080808]">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 md:py-20">
-          <div className="max-w-3xl">
-            <p className="text-xs font-bold uppercase tracking-[0.26em] text-[#ff2635]">O que vais encontrar neste e-book</p>
-            <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight sm:text-4xl">
-              Um guia para mais clareza e autonomia emocional
-            </h2>
-          </div>
-          <div className="mt-10 grid gap-0 sm:grid-cols-2 lg:grid-cols-5">
-            {benefits.map((benefit, index) => {
-              const Icon = benefit.icon;
-              return (
-                <article key={benefit.title} className="border-t border-white/10 py-6 sm:px-5 lg:border-l lg:border-t-0 lg:first:border-l-0 lg:first:pl-0">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#ff2635] text-[#ff2635]">
-                    <Icon size={22} strokeWidth={1.6} />
-                  </div>
-                  <p className="mt-5 text-[10px] font-semibold tracking-[0.2em] text-[#ff2635]">0{index + 1}</p>
-                  <h3 className="mt-2 font-serif text-xl font-semibold leading-snug">{benefit.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-white/55">{benefit.description}</p>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section id="sobre" className="border-b border-[#ff2635]/50 bg-[linear-gradient(110deg,#100304,#050505_45%,#0c0c0c)]">
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 md:grid-cols-2 md:gap-16 md:py-20">
+      <section className="border-b border-white/10 bg-[#0d0d0d]">
+        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-10 sm:px-8 md:grid-cols-3 md:gap-12 md:py-12">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.26em] text-[#ff2635]">Para quem é este e-book?</p>
-            <h2 className="mt-4 font-serif text-3xl font-semibold sm:text-4xl">Este guia pode ser para ti se…</h2>
-            <ul className="mt-7 space-y-4">
-              {audience.map((item) => (
-                <li key={item} className="flex gap-3 text-white/75">
-                  <Check size={19} className="mt-1 shrink-0 text-[#ff2635]" />
-                  <span className="leading-7">{item}</span>
-                </li>
-              ))}
-            </ul>
+            <p className="font-serif text-2xl">Compreender</p>
+            <p className="mt-2 text-sm leading-6 text-white/50">Dar nome aos padrões que observas, sem tirar conclusões precipitadas.</p>
           </div>
-          <div className="flex flex-col justify-center border-t border-white/10 pt-8 md:border-l md:border-t-0 md:pl-12 md:pt-0">
-            <BookOpen size={38} strokeWidth={1.3} className="text-[#ff2635]" />
-            <p className="mt-6 text-xs font-bold uppercase tracking-[0.26em] text-[#ff2635]">Mais do que ler</p>
-            <h3 className="mt-3 font-serif text-3xl font-semibold leading-tight sm:text-4xl">
-              É um momento para começares por ti.
-            </h3>
-            <p className="mt-5 leading-7 text-white/60">
-              Não podes controlar as escolhas de outra pessoa, mas podes refletir sobre os teus limites, procurar apoio e decidir o que é melhor para ti.
-            </p>
-            <p className="mt-6 border-l-2 border-[#ff2635] pl-4 font-serif text-xl italic text-white/85">
-              A tua paz merece atenção.
-            </p>
+          <div className="border-t border-white/10 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+            <p className="font-serif text-2xl">Estabelecer limites</p>
+            <p className="mt-2 text-sm leading-6 text-white/50">Encontrar formas mais claras de comunicar aquilo que é importante para ti.</p>
+          </div>
+          <div className="border-t border-white/10 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+            <p className="font-serif text-2xl">Cuidar de ti</p>
+            <p className="mt-2 text-sm leading-6 text-white/50">Olhar para as tuas necessidades e considerar os próximos passos com calma.</p>
           </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-b border-[#ff2635]/50 bg-[#100203]">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_10%_50%,rgba(255,0,30,0.18),transparent_45%),linear-gradient(90deg,transparent,rgba(0,0,0,0.6))]" />
-        <div className="relative mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 sm:px-8 md:flex-row md:items-center md:justify-between md:py-16">
-          <div className="max-w-2xl">
-            <p className="text-xs font-bold uppercase tracking-[0.26em] text-[#ff2635]">O teu próximo passo</p>
-            <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight sm:text-4xl">
-              Queres conhecer melhor o e-book?
-            </h2>
-            <p className="mt-4 max-w-xl leading-7 text-white/60">
-              Envia uma mensagem para receber o preço, os métodos de pagamento e os detalhes de entrega. Podes esclarecer as tuas dúvidas antes de decidir.
+      <section id="ebook" className="mx-auto max-w-6xl px-5 py-16 sm:px-8 md:py-24">
+        <div className="grid gap-12 md:grid-cols-[0.8fr_1.2fr] md:gap-20">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.24em] text-[#f12a38]">Sobre o e-book</p>
+            <h2 className="mt-5 font-serif text-4xl leading-tight sm:text-5xl">Um ponto de partida, não uma fórmula mágica.</h2>
+            <p className="mt-6 leading-7 text-white/60">
+              Cada relação tem a sua história. Este material reúne ideias para te ajudar a pensar sobre comportamentos difíceis, reconhecer os teus limites e decidir que tipo de apoio poderá ser útil.
             </p>
+          </div>
+          <div className="border-t border-white/15">
+            {topics.map((topic) => (
+              <article key={topic.number} className="grid gap-3 border-b border-white/15 py-6 sm:grid-cols-[60px_1fr] sm:gap-6 sm:py-7">
+                <p className="font-serif text-2xl text-[#f12a38]">{topic.number}</p>
+                <div>
+                  <h3 className="font-serif text-2xl">{topic.title}</h3>
+                  <p className="mt-2 max-w-xl text-sm leading-7 text-white/55">{topic.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-[#3b171a] bg-[#12090a]">
+        <div className="mx-auto flex max-w-6xl flex-col gap-7 px-5 py-12 sm:px-8 md:flex-row md:items-center md:justify-between md:py-16">
+          <div className="max-w-2xl">
+            <p className="text-xs font-medium uppercase tracking-[0.24em] text-[#f12a38]">Queres saber mais?</p>
+            <h2 className="mt-4 font-serif text-3xl leading-tight sm:text-4xl">Esclarece as tuas dúvidas antes de comprar.</h2>
+            <p className="mt-4 text-sm leading-7 text-white/60">Envia uma mensagem para conhecer o preço, os métodos de pagamento e a forma de entrega.</p>
           </div>
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex shrink-0 items-center justify-center gap-3 rounded-full bg-[#f3162a] px-7 py-4 font-bold text-white shadow-xl shadow-red-950/40 transition hover:-translate-y-0.5 hover:bg-[#d90d20]"
+            className="inline-flex shrink-0 items-center justify-center gap-3 bg-[#e51b2b] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[#c91523]"
           >
-            <MessageCircle size={20} /> Pedir informações <ArrowRight size={18} />
+            <MessageCircle size={18} /> Falar pelo WhatsApp <ArrowRight size={17} />
           </a>
         </div>
       </section>
 
-      <section id="perguntas" className="mx-auto max-w-5xl px-5 py-16 sm:px-8 md:py-20">
-        <div className="text-center">
-          <CircleHelp size={28} className="mx-auto text-[#ff2635]" />
-          <p className="mt-4 text-xs font-bold uppercase tracking-[0.26em] text-[#ff2635]">Perguntas frequentes</p>
-          <h2 className="mt-3 font-serif text-3xl font-semibold sm:text-4xl">Tira as tuas dúvidas</h2>
-        </div>
-        <div className="mt-9 grid gap-3 md:grid-cols-2">
+      <section id="perguntas" className="mx-auto max-w-4xl px-5 py-16 sm:px-8 md:py-20">
+        <p className="text-xs font-medium uppercase tracking-[0.24em] text-[#f12a38]">Informação útil</p>
+        <h2 className="mt-4 font-serif text-3xl sm:text-4xl">Perguntas frequentes</h2>
+        <div className="mt-8">
           {faqs.map((faq) => (
-            <details key={faq.question} className="group border border-white/10 bg-[#0b0b0b] p-5 open:border-[#ff2635]/60">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold">
-                {faq.question}
-                <span className="text-xl text-[#ff2635] transition group-open:rotate-45">+</span>
-              </summary>
-              <p className="mt-4 text-sm leading-7 text-white/60">{faq.answer}</p>
+            <details key={faq.question} className="border-t border-white/15 py-5">
+              <summary className="cursor-pointer text-base font-medium">{faq.question}</summary>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-white/55">{faq.answer}</p>
             </details>
           ))}
         </div>
-        <p className="mt-8 text-center text-xs leading-6 text-white/35">
-          O conteúdo é educativo e não substitui apoio psicológico ou profissional. Não se destina a diagnosticar outra pessoa.
+        <p className="mt-8 text-xs leading-6 text-white/35">
+          Este e-book tem fins educativos e não substitui acompanhamento psicológico ou aconselhamento profissional. Não se destina a diagnosticar outra pessoa.
         </p>
       </section>
 
-      <footer className="border-t border-white/10 bg-black px-5 py-8 sm:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 text-center sm:flex-row sm:text-left">
-          <a href="#inicio" className="flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#ff2635] text-[#ff2635]">
-              <Sparkles size={18} />
-            </span>
-            <span className="text-xs font-semibold uppercase leading-5 tracking-[0.2em]">Sweet Simple<br />Solutions</span>
+      <footer className="border-t border-white/10">
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-7 text-sm text-white/40 sm:px-8 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="font-medium tracking-[0.12em] text-white/70">SWEET SIMPLE SOLUTIONS</p>
+            <p className="mt-1 text-xs">Um guia para pensar nas relações com mais clareza.</p>
+          </div>
+          <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-[#f12a38]">
+            <MessageCircle size={16} /> Contactar pelo WhatsApp
           </a>
-          <p className="font-serif text-sm italic text-white/45">Conhecimento, consciência e bem-estar.</p>
-          <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-[#ff2635] transition hover:text-white">
-            <MessageCircle size={17} /> Falar no WhatsApp
-          </a>
+          <p className="text-xs">© {new Date().getFullYear()} Sweet Simple Solutions</p>
         </div>
-        <p className="mt-6 text-center text-xs text-white/30">© {new Date().getFullYear()} Sweet Simple Solutions. Todos os direitos reservados.</p>
       </footer>
     </main>
   );
