@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -144,33 +145,25 @@
 }
 
 
-/* Rounded display type for the main hero headline, keeping the premium feel. */
-@font-face {
-  font-family: "Europa Grotesk";
-  src: url("/fonts/EuropaGroteskSH-Med.otf") format("opentype");
-  font-style: normal;
-  font-weight: 500 800;
-  font-display: swap;
+/* Typography system: versatile Manrope + editorial Instrument Serif. */
+@layer base {
+  html {
+    font-family: "Manrope", sans-serif;
+  }
+
+  body {
+    font-family: "Manrope", sans-serif;
+  }
 }
 
 .hero-title-rounded {
-  font-family: "Europa Grotesk", ui-rounded, sans-serif;
-  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
   letter-spacing: -0.065em;
 }
 
-
-/* Display type for the second phrase of the hero headline. */
-@font-face {
-  font-family: "Agraham";
-  src: url("/fonts/Agraham.woff2") format("woff2"), url("/fonts/Agraham.otf") format("opentype");
-  font-style: normal;
-  font-weight: 400 800;
-  font-display: swap;
-}
-
 .hero-title-agraham {
-  font-family: "Agraham", Georgia, serif;
+  font-family: "Instrument Serif", Georgia, serif;
   font-weight: 400;
   letter-spacing: -0.045em;
 }
