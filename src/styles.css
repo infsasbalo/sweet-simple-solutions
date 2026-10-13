@@ -286,6 +286,26 @@ h2, h3 {
   animation: hero-line-pulse 5s ease-in-out infinite;
 }
 
+#inicio .hero-motion-orb-red {
+  box-shadow: 0 0 24px rgba(255, 38, 59, 0.42);
+}
+
+#inicio .hero-motion-ring {
+  border-radius: 50%;
+  box-shadow: 0 0 42px rgba(255, 38, 59, 0.06), inset 0 0 32px rgba(255, 38, 59, 0.035);
+  animation: hero-ring-drift 12s ease-in-out infinite;
+}
+
+#inicio .hero-motion-ring-delayed { animation-delay: -5s; animation-direction: reverse; }
+
+#inicio .hero-motion-streak {
+  opacity: 0.5;
+  transform: rotate(-28deg);
+  animation: hero-streak-drift 8s ease-in-out infinite;
+}
+
+#inicio .hero-motion-streak-delayed { animation-delay: -3.5s; animation-direction: reverse; }
+
 @keyframes hero-title-fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -311,12 +331,22 @@ h2, h3 {
   50% { opacity: 1; transform: scaleX(1); }
 }
 
+@keyframes hero-ring-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(0.94); opacity: 0.38; }
+  50% { transform: translate3d(10px, -18px, 0) scale(1.06); opacity: 0.8; }
+}
+
+@keyframes hero-streak-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-28deg); opacity: 0.25; }
+  50% { transform: translate3d(12px, -8px, 0) rotate(-18deg); opacity: 0.8; }
+}
+
 /* Larger, rounder primary call-to-action. */
 .premium-cta {
   border-radius: 999px;
   padding: 1rem 2rem;
-  font-size: clamp(0.875rem, 1.15vw, 1.05rem);
-  letter-spacing: 0.045em;
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  letter-spacing: 0.035em;
   box-shadow: 0 8px 28px rgba(255, 38, 59, 0.18);
 }
 
@@ -333,6 +363,8 @@ h2, h3 {
   #inicio .hero-motion-orb,
   #inicio .hero-motion-orb-delayed,
   #inicio .hero-motion-line,
+  #inicio .hero-motion-ring,
+  #inicio .hero-motion-streak,
   .premium-cta, .premium-cta::before, .premium-cta-icon {
     animation: none;
     transition: none;
