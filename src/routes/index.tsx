@@ -20,7 +20,7 @@ function Index() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#090909] text-[#f6f1e9] selection:bg-[#ff263b] selection:text-white">
-      <header className="relative z-20 border-b border-white/10">
+      <header className="glass-header relative z-20 border-b border-white/10">
         <div className="mx-auto flex max-w-[1240px] items-center justify-between px-5 py-5 sm:px-8 lg:px-12">
           <a href="#inicio" aria-label="Sweet Simple Solutions — início" className="flex items-center gap-3">
             <span className="flex h-10 w-10 items-center justify-center border border-[#ff263b]/70 text-sm font-black tracking-[-0.14em] text-[#ff263b]">S/S</span>
@@ -38,14 +38,14 @@ function Index() {
       <section id="inicio" className="relative isolate">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10" style={{ background: "radial-gradient(ellipse at 50% 28%, rgba(255,35,59,0.16), transparent 38%), radial-gradient(ellipse at 80% 65%, rgba(255,35,59,0.07), transparent 32%)" }} />
         <div className="mx-auto max-w-[1120px] px-5 pb-20 pt-16 text-center sm:px-8 sm:pb-24 sm:pt-24 lg:pt-28">
-          <div className="mx-auto mb-7 flex w-fit items-center justify-center gap-3 border border-white/15 px-4 py-2"><Sparkles size={12} className="text-[#ff263b]" /><span className="text-[9px] font-semibold uppercase tracking-[0.24em] text-white/65">Um guia para relações difíceis</span></div>
+          <div className="glass-panel mx-auto mb-7 flex w-fit items-center justify-center gap-3 border border-white/15 px-4 py-2"><Sparkles size={12} className="text-[#ff263b]" /><span className="text-[9px] font-semibold uppercase tracking-[0.24em] text-white/65">Um guia para relações difíceis</span></div>
           <h1 className="mx-auto max-w-[1000px] text-[clamp(3.2rem,8.4vw,7.7rem)] font-semibold leading-[0.86] tracking-[-0.075em]"><span className="hero-title-rounded">Volta a confiar</span><br /><span className="hero-title-fraunces font-light italic text-[#ff263b]">na tua clareza.</span></h1>
           <p className="mx-auto mt-7 max-w-[570px] text-[14px] leading-7 text-white/60 sm:mt-9 sm:text-[16px] sm:leading-8">Um espaço para compreender relações difíceis, reconhecer padrões e olhar para as tuas necessidades com mais cuidado — sem pressa e sem julgamentos.</p>
           <a href={whatsappUrl} target="_blank" rel="noreferrer" className="group mx-auto mt-8 inline-flex min-h-14 items-center gap-5 bg-[#ff263b] px-7 text-[10px] font-extrabold uppercase tracking-[0.14em] text-white transition hover:bg-white hover:text-[#090909]">Conhecer o e-book <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" /></a>
 
           <div className="relative mx-auto mt-16 max-w-[800px] sm:mt-20">
             <div aria-hidden="true" className="absolute left-1/2 top-1/2 h-[75%] w-[72%] -translate-x-1/2 -translate-y-1/2 blur-[70px]" style={{ background: "rgba(255,35,59,0.22)" }} />
-            <div className="relative mx-auto w-[min(82%,360px)] border border-white/20 bg-[#111] p-3 text-left shadow-[0_30px_100px_rgba(0,0,0,0.7)] sm:w-[330px] sm:p-4">
+            <div className="glass-panel relative mx-auto w-[min(82%,360px)] border border-white/20 bg-[#111]/80 p-3 text-left shadow-[0_30px_100px_rgba(0,0,0,0.7)] sm:w-[330px] sm:p-4">
               <div className="flex items-center justify-between border-b border-white/15 pb-3"><span className="text-[8px] font-bold tracking-[0.2em] text-white/70">SWEET SIMPLE SOLUTIONS</span><span className="text-[8px] tracking-[0.16em] text-white/35">S/S — 001</span></div>
               <div className="relative mt-3 flex aspect-[0.73] flex-col justify-between overflow-hidden border border-white/10 p-5 sm:p-7" style={{ background: "linear-gradient(145deg, #1c1c1c 0%, #0a0a0a 58%, #26070d 100%)" }}>
                 <div aria-hidden="true" className="absolute -right-20 top-10 h-56 w-56 rounded-full border border-[#ff263b]/70 shadow-[0_0_55px_rgba(255,35,59,0.2)] sm:-right-24 sm:h-64 sm:w-64" />
@@ -64,7 +64,7 @@ function Index() {
 
       <section id="guia" className="border-y border-white/10 bg-[#101010]">
         <div className="mx-auto grid max-w-[1080px] gap-10 px-5 py-16 sm:px-8 sm:py-20 md:grid-cols-3 md:gap-8 lg:py-24">
-          <div className="text-center"><span className="mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-[#ff263b]/40 text-[10px] text-[#ff263b]">01</span><h2 className="mt-5 text-lg font-medium tracking-[-0.03em]">Compreender</h2><p className="mx-auto mt-3 max-w-[270px] text-[12px] leading-6 text-white/45">Observar as dinâmicas com curiosidade, sem te apressares a encontrar respostas.</p></div>
+          <div className="glass-panel text-center"><span className="mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-[#ff263b]/40 text-[10px] text-[#ff263b]">01</span><h2 className="mt-5 text-lg font-medium tracking-[-0.03em]">Compreender</h2><p className="mx-auto mt-3 max-w-[270px] text-[12px] leading-6 text-white/45">Observar as dinâmicas com curiosidade, sem te apressares a encontrar respostas.</p></div>
           <div className="text-center"><span className="mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-[#ff263b]/40 text-[10px] text-[#ff263b]">02</span><h2 className="mt-5 text-lg font-medium tracking-[-0.03em]">Reconhecer</h2><p className="mx-auto mt-3 max-w-[270px] text-[12px] leading-6 text-white/45">Dar nome aos teus limites, às tuas necessidades e ao que merece atenção.</p></div>
           <div className="text-center"><span className="mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-[#ff263b]/40 text-[10px] text-[#ff263b]">03</span><h2 className="mt-5 text-lg font-medium tracking-[-0.03em]">Cuidar de ti</h2><p className="mx-auto mt-3 max-w-[270px] text-[12px] leading-6 text-white/45">Avançar ao teu ritmo, respeitando a tua experiência e as tuas escolhas.</p></div>
         </div>
@@ -79,7 +79,7 @@ function Index() {
       <section id="conteudo" className="border-y border-white/10 bg-[#f4efe7] text-[#151313]">
         <div className="mx-auto max-w-[1040px] px-5 py-16 sm:px-8 sm:py-24">
           <div className="text-center"><p className="text-[9px] font-bold uppercase tracking-[0.24em] text-[#c91f32]">Dentro do e-book</p><h2 className="mt-4 text-4xl font-semibold leading-[0.95] tracking-[-0.06em] sm:text-6xl">Pequenos passos.<br /><span className="font-light italic">Mais consciência.</span></h2><p className="mx-auto mt-5 max-w-[480px] text-[12px] leading-6 text-black/55">Lê com calma e guarda aquilo que fizer sentido para a tua realidade.</p></div>
-          <div className="mx-auto mt-12 max-w-[820px] border-t border-black/15">{chapters.map((chapter) => <article key={chapter.number} className="grid gap-3 border-b border-black/15 py-7 sm:grid-cols-[60px_1fr_1fr] sm:items-center sm:gap-7 sm:py-8"><span className="text-[10px] font-bold tracking-[0.15em] text-[#c91f32]">{chapter.number}</span><h3 className="text-xl font-medium tracking-[-0.04em] sm:text-2xl">{chapter.title}</h3><p className="text-[12px] leading-6 text-black/55">{chapter.text}</p></article>)}</div>
+          <div className="mx-auto mt-12 max-w-[820px] border-t border-black/15">{chapters.map((chapter) => <article key={chapter.number} className="glass-row grid gap-3 border-b border-black/15 py-7 sm:grid-cols-[60px_1fr_1fr] sm:items-center sm:gap-7 sm:py-8"><span className="text-[10px] font-bold tracking-[0.15em] text-[#c91f32]">{chapter.number}</span><h3 className="text-xl font-medium tracking-[-0.04em] sm:text-2xl">{chapter.title}</h3><p className="text-[12px] leading-6 text-black/55">{chapter.text}</p></article>)}</div>
         </div>
       </section>
 
@@ -89,7 +89,7 @@ function Index() {
       </section>
 
       <section id="perguntas" className="border-t border-white/10 bg-[#101010] px-5 py-16 sm:px-8 sm:py-20">
-        <div className="mx-auto grid max-w-[900px] gap-8 md:grid-cols-[0.7fr_1.3fr] md:gap-12"><div className="text-center md:text-left"><p className="text-[9px] font-bold uppercase tracking-[0.24em] text-[#ff263b]">Antes de decidir</p><h2 className="mt-4 text-3xl font-medium leading-tight tracking-[-0.05em] sm:text-4xl">Perguntas frequentes.</h2></div><div>{faqs.map((faq) => <details key={faq.question} className="group border-t border-white/15 py-5 last:border-b"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[12px] font-medium text-white/85 sm:text-[13px]">{faq.question}<Plus size={15} className="shrink-0 text-[#ff263b] transition group-open:rotate-45" /></summary><p className="max-w-[600px] pr-8 pt-4 text-[12px] leading-6 text-white/50">{faq.answer}</p></details>)}<p className="mt-6 text-[10px] leading-6 text-white/30">Este e-book tem fins educativos. Não se destina a diagnosticar outra pessoa nem substitui acompanhamento psicológico ou aconselhamento profissional.</p></div></div>
+        <div className="mx-auto grid max-w-[900px] gap-8 md:grid-cols-[0.7fr_1.3fr] md:gap-12"><div className="text-center md:text-left"><p className="text-[9px] font-bold uppercase tracking-[0.24em] text-[#ff263b]">Antes de decidir</p><h2 className="mt-4 text-3xl font-medium leading-tight tracking-[-0.05em] sm:text-4xl">Perguntas frequentes.</h2></div><div>{faqs.map((faq) => <details key={faq.question} className="glass-faq group border-t border-white/15 py-5 last:border-b"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[12px] font-medium text-white/85 sm:text-[13px]">{faq.question}<Plus size={15} className="shrink-0 text-[#ff263b] transition group-open:rotate-45" /></summary><p className="max-w-[600px] pr-8 pt-4 text-[12px] leading-6 text-white/50">{faq.answer}</p></details>)}<p className="mt-6 text-[10px] leading-6 text-white/30">Este e-book tem fins educativos. Não se destina a diagnosticar outra pessoa nem substitui acompanhamento psicológico ou aconselhamento profissional.</p></div></div>
       </section>
 
       <footer className="border-t border-white/10">
