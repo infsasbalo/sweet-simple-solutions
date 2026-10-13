@@ -241,66 +241,16 @@ h2, h3 {
   50% { box-shadow: 0 0 16px rgba(255,255,255,0.18); }
 }
 
-/* Refined UI entrance and subtle light reflection for the hero headline. */
+/* Simple fade-in for the hero headline. */
 #inicio h1 {
-  position: relative;
-  animation: hero-title-fade-in 950ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-
-#inicio h1 .hero-title-rounded,
-#inicio h1 .hero-title-fraunces {
-  position: relative;
-  isolation: isolate;
-  animation: hero-line-settle 850ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-
-#inicio h1 .hero-title-fraunces {
-  animation-delay: 160ms;
-}
-
-#inicio h1 .hero-title-rounded::after,
-#inicio h1 .hero-title-fraunces::after {
-  content: "";
-  position: absolute;
-  inset: -0.06em -0.04em;
-  z-index: 1;
-  pointer-events: none;
-  background: linear-gradient(112deg, transparent 28%, rgba(255,255,255,0.04) 39%, rgba(255,255,255,0.78) 49%, rgba(255,255,255,0.12) 56%, transparent 68%);
-  transform: translateX(-135%);
-  animation: hero-text-reflection 1.35s cubic-bezier(0.2, 0.7, 0.2, 1) 900ms both;
-  mix-blend-mode: screen;
-}
-
-#inicio h1 .hero-title-fraunces::after {
-  animation-delay: 1.15s;
-  background: linear-gradient(112deg, transparent 28%, rgba(255,255,255,0.03) 39%, rgba(255,255,255,0.68) 49%, rgba(255,255,255,0.1) 56%, transparent 68%);
+  animation: hero-title-fade-in 900ms ease-out both;
 }
 
 @keyframes hero-title-fade-in {
-  from { opacity: 0; filter: blur(8px); }
-  to { opacity: 1; filter: blur(0); }
-}
-
-@keyframes hero-line-settle {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes hero-text-reflection {
-  from { transform: translateX(-135%); }
-  to { transform: translateX(135%); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #inicio h1,
-  #inicio h1 .hero-title-rounded,
-  #inicio h1 .hero-title-fraunces,
-  #inicio h1 .hero-title-rounded::after,
-  #inicio h1 .hero-title-fraunces::after,
-  .premium-cta, .premium-cta::before, .premium-cta-icon {
-    animation: none;
-    transition: none;
-    filter: none;
-    transform: none;
-  }
+  #inicio h1 { animation: none; }
 }
