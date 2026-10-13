@@ -247,31 +247,27 @@ h2, h3 {
   text-shadow: 0 0 24px rgba(255, 255, 255, 0.08);
 }
 
+/* The shine is painted on the glyphs themselves, so it never spills outside the letter contours. */
 #inicio h1 .hero-title-rounded,
 #inicio h1 .hero-title-fraunces {
   position: relative;
-  isolation: isolate;
-}
-
-#inicio h1 .hero-title-rounded::after,
-#inicio h1 .hero-title-fraunces::after {
-  content: "";
-  position: absolute;
-  inset: -0.08em -0.04em;
-  z-index: 1;
-  pointer-events: none;
-  background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.72) 50%, transparent 65%);
-  background-size: 220% 100%;
+  display: block;
+  background-size: 260% 100%;
   background-position: 120% 0;
-  -webkit-mask-image: linear-gradient(#000, #000);
-  mask-image: linear-gradient(#000, #000);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
   animation: hero-letter-shine 5s ease-in-out 1.2s infinite;
-  mix-blend-mode: screen;
 }
 
-#inicio h1 .hero-title-fraunces::after {
+#inicio h1 .hero-title-rounded {
+  background-image: linear-gradient(110deg, #f6f1e9 0%, #f6f1e9 39%, #ffffff 48%, #ffffff 51%, #f6f1e9 61%, #f6f1e9 100%);
+}
+
+#inicio h1 .hero-title-fraunces {
+  background-image: linear-gradient(110deg, #ff263b 0%, #ff263b 39%, #ffe1e4 48%, #ffffff 51%, #ff263b 61%, #ff263b 100%);
   animation-delay: 2s;
-  background-image: linear-gradient(110deg, transparent 35%, rgba(255,225,228,0.78) 50%, transparent 65%);
 }
 
 #inicio .hero-motion-orb {
@@ -331,8 +327,8 @@ h2, h3 {
 
 @media (prefers-reduced-motion: reduce) {
   #inicio h1,
-  #inicio h1 .hero-title-rounded::after,
-  #inicio h1 .hero-title-fraunces::after,
+  #inicio h1 .hero-title-rounded,
+  #inicio h1 .hero-title-fraunces,
   #inicio .hero-motion-orb,
   #inicio .hero-motion-orb-delayed,
   #inicio .hero-motion-line,
