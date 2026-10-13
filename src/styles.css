@@ -91,12 +91,12 @@
   --card-foreground: oklch(0.984 0.003 247.858);
   --popover: oklch(0.208 0.042 265.755);
   --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
+  --primary: oklch(0.929 0.013 264.364);
   --primary-foreground: oklch(0.208 0.042 265.755);
   --secondary: oklch(0.279 0.041 260.031);
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
+  --muted-foreground: oklch(0.704 0.04 264.364);
   --accent: oklch(0.279 0.041 260.031);
   --accent-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(1 0 0 / 10%);
@@ -107,12 +107,12 @@
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar: oklch(0.208 0.042 264.364);
+  --sidebar-foreground: oklch(0.984 0.003 264.364);
   --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary-foreground: oklch(0.984 0.003 264.364);
+  --sidebar-accent: oklch(0.279 0.041 264.364);
+  --sidebar-accent-foreground: oklch(0.984 0.003 264.364);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
@@ -241,6 +241,66 @@ h2, h3 {
   50% { box-shadow: 0 0 16px rgba(255,255,255,0.18); }
 }
 
+/* Refined UI entrance and subtle light reflection for the hero headline. */
+#inicio h1 {
+  position: relative;
+  animation: hero-title-fade-in 950ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+#inicio h1 .hero-title-rounded,
+#inicio h1 .hero-title-fraunces {
+  position: relative;
+  isolation: isolate;
+  animation: hero-line-settle 850ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+#inicio h1 .hero-title-fraunces {
+  animation-delay: 160ms;
+}
+
+#inicio h1 .hero-title-rounded::after,
+#inicio h1 .hero-title-fraunces::after {
+  content: "";
+  position: absolute;
+  inset: -0.06em -0.04em;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(112deg, transparent 28%, rgba(255,255,255,0.04) 39%, rgba(255,255,255,0.78) 49%, rgba(255,255,255,0.12) 56%, transparent 68%);
+  transform: translateX(-135%);
+  animation: hero-text-reflection 1.35s cubic-bezier(0.2, 0.7, 0.2, 1) 900ms both;
+  mix-blend-mode: screen;
+}
+
+#inicio h1 .hero-title-fraunces::after {
+  animation-delay: 1.15s;
+  background: linear-gradient(112deg, transparent 28%, rgba(255,255,255,0.03) 39%, rgba(255,255,255,0.68) 49%, rgba(255,255,255,0.1) 56%, transparent 68%);
+}
+
+@keyframes hero-title-fade-in {
+  from { opacity: 0; filter: blur(8px); }
+  to { opacity: 1; filter: blur(0); }
+}
+
+@keyframes hero-line-settle {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hero-text-reflection {
+  from { transform: translateX(-135%); }
+  to { transform: translateX(135%); }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .premium-cta, .premium-cta::before, .premium-cta-icon { animation: none; transition: none; }
+  #inicio h1,
+  #inicio h1 .hero-title-rounded,
+  #inicio h1 .hero-title-fraunces,
+  #inicio h1 .hero-title-rounded::after,
+  #inicio h1 .hero-title-fraunces::after,
+  .premium-cta, .premium-cta::before, .premium-cta-icon {
+    animation: none;
+    transition: none;
+    filter: none;
+    transform: none;
+  }
 }
