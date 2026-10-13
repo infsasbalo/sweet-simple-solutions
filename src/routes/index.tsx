@@ -40,9 +40,15 @@ function Index() {
       </header>
 
       <section id="inicio" className="relative isolate">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10" style={{ background: "radial-gradient(ellipse at 50% 28%, rgba(255,35,59,0.16), transparent 38%), radial-gradient(ellipse at 80% 65%, rgba(255,35,59,0.07), transparent 32%)" }} />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10" style={{ background: "radial-gradient(ellipse at 50% 24%, rgba(255,20,48,0.28), transparent 42%), radial-gradient(ellipse at 82% 58%, rgba(255,20,48,0.16), transparent 34%), radial-gradient(ellipse at 12% 78%, rgba(180,0,24,0.18), transparent 32%)" }} />
         <div aria-hidden="true" className="hero-motion-orb pointer-events-none absolute left-[8%] top-28 -z-10 h-24 w-24 rounded-full border border-[#ff263b]/20 blur-[1px] sm:left-[14%] sm:h-32 sm:w-32" />
         <div aria-hidden="true" className="hero-motion-orb-delayed pointer-events-none absolute right-[8%] top-56 -z-10 h-16 w-16 rounded-full border border-white/15 sm:right-[16%] sm:h-24 sm:w-24" />
+        <div aria-hidden="true" className="hero-motion-orb hero-motion-orb-red pointer-events-none absolute left-[28%] top-[18rem] -z-10 h-3 w-3 rounded-full bg-[#ff263b]/70 blur-[1px] sm:left-[30%] sm:top-[22rem]" />
+        <div aria-hidden="true" className="hero-motion-orb-delayed hero-motion-orb-red pointer-events-none absolute right-[28%] top-[25rem] -z-10 h-2 w-2 rounded-full bg-[#ff6675]/80 blur-[1px] sm:right-[32%] sm:top-[28rem]" />
+        <div aria-hidden="true" className="hero-motion-ring pointer-events-none absolute left-[5%] top-[32rem] -z-10 h-36 w-36 rounded-full border border-[#ff263b]/15 sm:left-[9%] sm:h-52 sm:w-52" />
+        <div aria-hidden="true" className="hero-motion-ring hero-motion-ring-delayed pointer-events-none absolute right-[3%] top-[38rem] -z-10 h-28 w-28 rounded-full border border-[#ff263b]/20 sm:right-[8%] sm:h-44 sm:w-44" />
+        <div aria-hidden="true" className="hero-motion-streak pointer-events-none absolute left-[16%] top-[17rem] -z-10 h-px w-24 bg-gradient-to-r from-transparent via-[#ff263b]/70 to-transparent sm:left-[20%] sm:top-[20rem]" />
+        <div aria-hidden="true" className="hero-motion-streak hero-motion-streak-delayed pointer-events-none absolute right-[13%] top-[31rem] -z-10 h-px w-32 bg-gradient-to-r from-transparent via-[#ff5265]/70 to-transparent sm:right-[18%] sm:top-[35rem]" />
         <div className="mx-auto max-w-[1120px] px-5 pb-20 pt-16 text-center sm:px-8 sm:pb-24 sm:pt-24 lg:pt-28">
           <div className="glass-panel mx-auto mb-7 flex w-fit items-center justify-center gap-3 border border-white/15 px-4 py-2"><Sparkles size={12} className="text-[#ff263b]" /><span className="text-[9px] font-semibold uppercase tracking-[0.24em] text-white/65">Um guia para relações difíceis</span></div>
           <h1 className="mx-auto max-w-[1000px] text-[clamp(3rem,7.8vw,7.2rem)] font-semibold leading-[0.86] tracking-[-0.075em]"><span className="hero-title-rounded block">Liberta-te do narcisismo</span><span className="hero-title-fraunces mt-3 block font-light italic text-[#ff263b] sm:mt-4">e recupera o teu poder.</span></h1>
