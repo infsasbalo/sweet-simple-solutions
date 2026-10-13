@@ -41,6 +41,8 @@ function Index() {
 
       <section id="inicio" className="relative isolate">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10" style={{ background: "radial-gradient(ellipse at 50% 28%, rgba(255,35,59,0.16), transparent 38%), radial-gradient(ellipse at 80% 65%, rgba(255,35,59,0.07), transparent 32%)" }} />
+        <div aria-hidden="true" className="hero-motion-orb pointer-events-none absolute left-[8%] top-28 -z-10 h-24 w-24 rounded-full border border-[#ff263b]/20 blur-[1px] sm:left-[14%] sm:h-32 sm:w-32" />
+        <div aria-hidden="true" className="hero-motion-orb-delayed pointer-events-none absolute right-[8%] top-56 -z-10 h-16 w-16 rounded-full border border-white/15 sm:right-[16%] sm:h-24 sm:w-24" />
         <div className="mx-auto max-w-[1120px] px-5 pb-20 pt-16 text-center sm:px-8 sm:pb-24 sm:pt-24 lg:pt-28">
           <div className="glass-panel mx-auto mb-7 flex w-fit items-center justify-center gap-3 border border-white/15 px-4 py-2"><Sparkles size={12} className="text-[#ff263b]" /><span className="text-[9px] font-semibold uppercase tracking-[0.24em] text-white/65">Um guia para relações difíceis</span></div>
           <h1 className="mx-auto max-w-[1000px] text-[clamp(3rem,7.8vw,7.2rem)] font-semibold leading-[0.86] tracking-[-0.075em]"><span className="hero-title-rounded block">Liberta-te do narcisismo</span><span className="hero-title-fraunces mt-3 block font-light italic text-[#ff263b] sm:mt-4">e recupera o teu poder.</span></h1>
@@ -54,9 +56,9 @@ function Index() {
             <div className="glass-panel relative mx-auto w-[min(82%,360px)] border border-white/20 bg-[#111]/80 p-3 text-left shadow-[0_30px_100px_rgba(0,0,0,0.7)] sm:w-[330px] sm:p-4">
               <div className="flex items-center justify-between border-b border-white/15 pb-3"><span className="text-[8px] font-bold tracking-[0.2em] text-white/70">SWEET SIMPLE SOLUTIONS</span><span className="text-[8px] tracking-[0.16em] text-white/35">S/S — 001</span></div>
               <div className="relative mt-3 flex aspect-[0.73] flex-col justify-between overflow-hidden border border-white/10 p-5 sm:p-7" style={{ background: "linear-gradient(145deg, #1c1c1c 0%, #0a0a0a 58%, #26070d 100%)" }}>
-                <div aria-hidden="true" className="absolute -right-20 top-10 h-56 w-56 rounded-full border border-[#ff263b]/70 shadow-[0_0_55px_rgba(255,35,59,0.2)] sm:-right-24 sm:h-64 sm:w-64" />
-                <div aria-hidden="true" className="absolute -right-12 top-20 h-40 w-40 rounded-full border-[22px] border-[#ff263b]/20 sm:h-48 sm:w-48" />
-                <div aria-hidden="true" className="absolute bottom-12 left-0 h-px w-full bg-gradient-to-r from-transparent via-[#ff263b]/70 to-transparent" />
+                <div aria-hidden="true" className="hero-motion-orb absolute -right-20 top-10 h-56 w-56 rounded-full border border-[#ff263b]/70 shadow-[0_0_55px_rgba(255,35,59,0.2)] sm:-right-24 sm:h-64 sm:w-64" />
+                <div aria-hidden="true" className="hero-motion-orb-delayed absolute -right-12 top-20 h-40 w-40 rounded-full border-[22px] border-[#ff263b]/20 sm:h-48 sm:w-48" />
+                <div aria-hidden="true" className="hero-motion-line absolute bottom-12 left-0 h-px w-full bg-gradient-to-r from-transparent via-[#ff263b]/70 to-transparent" />
                 <div className="relative z-10"><span className="text-[8px] font-bold uppercase tracking-[0.24em] text-[#ff263b]">Guia digital · Nº 01</span><h2 className="mt-7 text-[clamp(2rem,4.5vw,3rem)] font-semibold leading-[0.9] tracking-[-0.07em]">COMO LIDAR COM PESSOAS <span className="font-light italic text-[#ff263b]">NARCISISTAS</span></h2><p className="mt-5 max-w-[200px] text-[9px] leading-5 text-white/55">Compreender padrões. Reconhecer limites. Cuidar de ti.</p></div>
                 <div className="relative z-10 flex items-end justify-between border-t border-white/20 pt-4"><span className="text-[8px] uppercase tracking-[0.2em] text-white/40">Uma leitura para ti</span><BookOpen size={17} className="text-[#ff263b]" /></div>
               </div>
