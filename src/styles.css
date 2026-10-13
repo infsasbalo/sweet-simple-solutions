@@ -5,20 +5,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
- */
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -53,13 +39,13 @@
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
   --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-foreground: var(--foreground);
+  --color-sidebar-primary: var(--primary);
+  --color-sidebar-primary-foreground: var(--primary-foreground);
+  --color-sidebar-accent: var(--accent);
+  --color-sidebar-accent-foreground: var(--accent-foreground);
+  --color-sidebar-border: var(--border);
+  --color-sidebar-ring: var(--ring);
 }
 
 :root {
@@ -95,7 +81,7 @@
   --sidebar-accent: oklch(0.968 0.007 247.896);
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
 .dark {
@@ -113,8 +99,6 @@
   --muted-foreground: oklch(0.704 0.04 256.788);
   --accent: oklch(0.279 0.041 260.031);
   --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.551 0.027 264.364);
@@ -134,26 +118,13 @@
 }
 
 @layer base {
-  * {
-    border-color: var(--color-border);
-  }
-
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-  }
+  * { border-color: var(--color-border); }
+  body { background-color: var(--color-background); color: var(--color-foreground); }
 }
-
 
 /* Typography system: versatile Manrope + editorial Instrument Serif. */
 @layer base {
-  html {
-    font-family: "Manrope", sans-serif;
-  }
-
-  body {
-    font-family: "Manrope", sans-serif;
-  }
+  html, body { font-family: "Manrope", sans-serif; }
 }
 
 .hero-title-rounded {
@@ -168,16 +139,11 @@
   letter-spacing: -0.045em;
 }
 
-
-/* Manrope ExtraBold for page section titles; preserve the custom hero typography. */
-h2,
-h3 {
+h2, h3 {
   font-family: "Manrope", sans-serif;
   font-weight: 800;
 }
 
-
-/* Subtle glass treatment: preserve the existing dark, red editorial identity. */
 .glass-header {
   background: rgba(10, 10, 10, 0.72);
   -webkit-backdrop-filter: blur(18px) saturate(135%);
@@ -206,9 +172,7 @@ h3 {
   transition: background-color 220ms ease, border-color 220ms ease;
 }
 
-.glass-row:hover {
-  background: rgba(255, 255, 255, 0.045);
-}
+.glass-row:hover { background: rgba(255, 255, 255, 0.045); }
 
 .glass-faq {
   padding-left: 0.9rem;
@@ -217,17 +181,10 @@ h3 {
   transition: background-color 220ms ease;
 }
 
-.glass-faq[open],
-.glass-faq:hover {
-  background: rgba(255, 255, 255, 0.035);
-}
+.glass-faq[open], .glass-faq:hover { background: rgba(255, 255, 255, 0.035); }
 
 @media (prefers-reduced-motion: reduce) {
-  .glass-panel,
-  .glass-row,
-  .glass-faq {
-    transition: none;
-  }
+  .glass-panel, .glass-row, .glass-faq { transition: none; }
 }
 
 /* Premium animated treatment for the main e-book CTA. */
@@ -236,6 +193,8 @@ h3 {
   isolation: isolate;
   overflow: hidden;
   gap: 0.9rem;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
   box-shadow: 0 0 0 rgba(255, 38, 59, 0);
   transition: transform 260ms ease, box-shadow 260ms ease, background-color 260ms ease, color 260ms ease;
 }
@@ -255,9 +214,7 @@ h3 {
   box-shadow: 0 10px 32px rgba(255, 38, 59, 0.28), 0 0 0 1px rgba(255,255,255,0.12);
 }
 
-.premium-cta:hover::before {
-  transform: translateX(140%);
-}
+.premium-cta:hover::before { transform: translateX(140%); }
 
 .premium-cta-icon {
   display: inline-flex;
@@ -285,11 +242,5 @@ h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .premium-cta,
-  .premium-cta::before,
-  .premium-cta-icon {
-    animation: none;
-    transition: none;
-  }
+  .premium-cta, .premium-cta::before, .premium-cta-icon { animation: none; transition: none; }
 }
-
