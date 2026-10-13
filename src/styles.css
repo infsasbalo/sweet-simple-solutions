@@ -252,21 +252,22 @@ h2, h3 {
 #inicio h1 .hero-title-fraunces {
   position: relative;
   display: block;
-  background-size: 260% 100%;
+  background-size: 280% 100%;
   background-position: 120% 0;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: hero-letter-shine 5s ease-in-out 1.2s infinite;
+  animation: hero-letter-shine 8s ease-in-out 1.2s infinite;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.16);
 }
 
 #inicio h1 .hero-title-rounded {
-  background-image: linear-gradient(110deg, #f6f1e9 0%, #f6f1e9 39%, #ffffff 48%, #ffffff 51%, #f6f1e9 61%, #f6f1e9 100%);
+  background-image: linear-gradient(110deg, #f6f1e9 0%, #f6f1e9 34%, rgba(255,255,255,0.92) 43%, #ffffff 50%, rgba(255,255,255,0.92) 57%, #f6f1e9 67%, #f6f1e9 100%);
 }
 
 #inicio h1 .hero-title-fraunces {
-  background-image: linear-gradient(110deg, #ff263b 0%, #ff263b 39%, #ffe1e4 48%, #ffffff 51%, #ff263b 61%, #ff263b 100%);
+  background-image: linear-gradient(110deg, #ff263b 0%, #ff263b 34%, #ffe1e4 43%, #ffffff 50%, #ffe1e4 57%, #ff263b 67%, #ff263b 100%);
   animation-delay: 2s;
 }
 
@@ -296,8 +297,8 @@ h2, h3 {
 }
 
 @keyframes hero-letter-shine {
-  0%, 65%, 100% { background-position: 120% 0; }
-  80% { background-position: -20% 0; }
+  0%, 62%, 100% { background-position: 120% 0; }
+  82% { background-position: -20% 0; }
 }
 
 @keyframes hero-orb-float {
