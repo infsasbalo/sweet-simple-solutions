@@ -167,3 +167,11 @@
   font-weight: 400;
   letter-spacing: -0.045em;
 }
+
+
+/* Manrope ExtraBold for page section titles; preserve the custom hero typography. */
+h2,
+h3 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+}
