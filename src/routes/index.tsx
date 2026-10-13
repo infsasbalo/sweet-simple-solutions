@@ -48,7 +48,7 @@ function Index() {
           <h1 className="mx-auto max-w-[1000px] text-[clamp(3rem,7.8vw,7.2rem)] font-semibold leading-[0.86] tracking-[-0.075em]"><span className="hero-title-rounded block">Liberta-te do narcisismo</span><span className="hero-title-fraunces mt-3 block font-light italic text-[#ff263b] sm:mt-4">e recupera o teu poder.</span></h1>
           <p className="mx-auto mt-7 max-w-[650px] text-[14px] leading-7 text-white/60 sm:mt-9 sm:text-[16px] sm:leading-8">Aprende a reconhecer comportamentos narcisistas, proteger os teus limites emocionais e lidar com relações difíceis sem perderes a confiança em ti mesmo.</p>
           <p className="mx-auto mt-3 max-w-[570px] text-[12px] leading-6 text-white/40">Um guia prático para compreender dinâmicas emocionais, responder com mais consciência e dar atenção às tuas próprias necessidades.</p>
-          <a href={whatsappUrl} target="_blank" rel="noreferrer" className="premium-cta group mx-auto mt-8 inline-flex min-h-14 items-center gap-4 bg-[#ff263b] px-6 py-4 text-[10px] font-extrabold uppercase tracking-[0.12em] text-white sm:px-7">Quero conhecer o e-book <span className="premium-cta-icon"><Sparkles size={18} strokeWidth={2.8} /></span></a>
+          <a href={whatsappUrl} target="_blank" rel="noreferrer" className="premium-cta group mx-auto mt-8 inline-flex min-h-14 items-center justify-center text-center bg-[#ff263b] px-7 py-4 text-sm font-extrabold uppercase tracking-[0.08em] text-white sm:px-9 sm:text-base">Quero conhecer o e-book</a>
           <p className="mt-3 text-[10px] text-white/35">Pede informações sobre preço, pagamento e entrega antes de decidir.</p>
 
           <div className="relative mx-auto mt-16 max-w-[800px] sm:mt-20">
