@@ -143,3 +143,11 @@
     color: var(--color-foreground);
   }
 }
+
+
+/* Rounded display type for the main hero headline, keeping the premium feel. */
+.hero-title-rounded {
+  font-family: "Nunito Sans", ui-rounded, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.065em;
+}
