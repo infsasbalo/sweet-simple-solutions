@@ -267,7 +267,7 @@ h2, h3 {
 }
 
 #inicio h1 .hero-title-fraunces {
-  background-image: linear-gradient(110deg, #ff263b 0%, #ff263b 34%, #ffe1e4 43%, #ffffff 50%, #ffe1e4 57%, #ff263b 67%, #ff263b 100%);
+  background-image: linear-gradient(110deg, #ff002b 0%, #ff002b 34%, #ffd1d8 43%, #ffffff 50%, #ffd1d8 57%, #ff002b 67%, #ff002b 100%);
   animation-delay: 2s;
 }
 
