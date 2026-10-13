@@ -175,3 +175,57 @@ h3 {
   font-family: "Manrope", sans-serif;
   font-weight: 800;
 }
+
+
+/* Subtle glass treatment: preserve the existing dark, red editorial identity. */
+.glass-header {
+  background: rgba(10, 10, 10, 0.72);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  backdrop-filter: blur(18px) saturate(135%);
+}
+
+.glass-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.018));
+  border-color: rgba(255, 255, 255, 0.16);
+  border-radius: 1rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 18px 55px rgba(0, 0, 0, 0.16);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  backdrop-filter: blur(16px) saturate(130%);
+}
+
+.glass-panel:hover {
+  border-color: rgba(255, 38, 59, 0.32);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09), 0 20px 60px rgba(0, 0, 0, 0.22);
+  transition: border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.glass-row {
+  border-radius: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: background-color 220ms ease, border-color 220ms ease;
+}
+
+.glass-row:hover {
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.glass-faq {
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+  border-radius: 0.75rem;
+  transition: background-color 220ms ease;
+}
+
+.glass-faq[open],
+.glass-faq:hover {
+  background: rgba(255, 255, 255, 0.035);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-panel,
+  .glass-row,
+  .glass-faq {
+    transition: none;
+  }
+}
